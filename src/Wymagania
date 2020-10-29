@@ -1,0 +1,16 @@
+Zlecenie na stronę WWW z systemem CMS do zarządzania informacjami nt. COVID-19.
+
+Strona powinna dać możliwość zarządzania kolejnymi informacjami i posiadać funkcje:
+    Artykuły informacyjne, newsy etc.,
+    Poradniki,
+    Mały sklep z “gadżetami” typu maseczki, rękawiczki, żele etc.,
+    Mapa z aptekami / przychodniami gdzie można się zgłosić,
+    Możliwość zapisania się na test COVID,
+    Aktualne statystyki (ilość chorych, śmierci etc.) na terenie Polski lub z podziałem na województwa; możliwość ręcznej aktualizacji tych wartości.
+
+Zarządzanie treścią powinno być możliwe z poziomu panelu admina.
+
+Użytkownicy mogą się rejestrować, aby dostać dostęp do funkcji:
+    Kupowania w sklepie,
+    Zapisywania się na testy.
+    Osoby niezarejestrowane mogą przeglądać stronę.
