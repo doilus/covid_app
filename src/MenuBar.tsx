@@ -1,7 +1,7 @@
 import Navbar from "react-bootstrap/Navbar";
 import {Nav} from "react-bootstrap";
 import React from "react";
-import cov_logo from './cov_logo.svg';
+import cov_logo from "./cov_logo.svg";
 
 class MenuBar extends React.Component {
     render() {

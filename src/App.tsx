@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import MenuBar from './MenuBar';
-import CovidShop from "./CovidShop";
+import CovidShop from "./ShopComponents/front/CovidShop";
 import CovidFeed from "./CovidFeed";
 import CovidNews from "./CovidNews";
 import Login from "./Login";
