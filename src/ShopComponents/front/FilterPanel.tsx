@@ -1,6 +1,6 @@
 import React from "react";
 import {shopItems} from "./ShopItems"
-import "../css/FilterPanel.css"
+import "../css/FilterPanel.scss"
 
 class FilterPanel extends React.Component {
     render() {
@@ -9,7 +9,7 @@ class FilterPanel extends React.Component {
                     {shopItems.map((item, index) => {
                         return (
                             <ul className="bar">
-                                <li key={index} className={item.cName}>
+                                <li key={index} className={item.cName} onClick={() => callItems(item.Name)}>
                                     {item.ikon}
                                     {item.Name}
                                 </li>
@@ -20,6 +20,10 @@ class FilterPanel extends React.Component {
             </div>
         );
     }
+}
+
+function callItems(name: string) {
+    return console.log(name);
 }
 
 export default FilterPanel;
