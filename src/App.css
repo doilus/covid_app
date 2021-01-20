@@ -1,1 +1,144 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.headerRaport {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(23, 162, 184, 0.3);
+    color: #138EA1;
+}
+
+.update {
+    color: grey;
+    margin: auto;
+    width: 50%;
+}
+
+.globalCases {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.cases,
+.deaths,
+.recovery {
+    display: flex;
+    font-size: 45px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.cases {
+    color: #138EA1;
+}
+
+.deaths {
+    color: #DB3E4B;
+}
+
+.recovery {
+    color: #3DD62F;
+}
+
+.reportedCases {
+    color: #2D435E;
+    padding-top: 10px;
+    padding-left: 50px;
+    font-size: 25px;
+}
+
+.search {
+    padding-left: 100px;
+}
+
+.tableCases {
+    width: 90%;
+    margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+    .tableCases,
+    .tableCases th,
+    .tableCases td {
+        border: 1px solid #2D435E;
+        padding: 5px;
+    }
+
+        .tableCases th {
+            color: #2D435E;
+            background: rgba(23, 162, 184, 0.3);
+            text-align: center;
+        }
+
+        .tableCases td {
+            text-align: right;
+        }
+
+        .tableCases tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .tableCases tr:hover {
+            background-color: #ddd;
+        }
+
+@media all and (max-width: 720px) {
+
+
+    .globalCases {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cases,
+    .deaths,
+    .recovery {
+        padding-right: 200px;
+    }
+
+    .tableCases {
+        margin-left: 10px;
+    }
+
+    .search,
+    .reportedCases {
+        padding-left: 10px;
+    }
+}
