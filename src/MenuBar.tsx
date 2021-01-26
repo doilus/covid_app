@@ -30,14 +30,14 @@ const MenuBar = ({user, logout}: MenuBarProps) => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
 
-                        <Link to="/feed">Covid feed</Link>
-                        <Link to="/news">Covid news</Link>
-                        <Link to="/shop">Covid shop</Link>
+                        <Link to="/feed" className="nav-link">Covid feed</Link>
+                        <Link to="/news" className="nav-link">Covid news</Link>
+                        <Link to="/shop" className="nav-link">Covid shop</Link>
                     </Nav>
                     <Nav>
-                        {user && <Link to="/panel"> {user.credentials.role} panel</Link>}
+                        {user && <Link to="/panel" className="nav-link"> {user.credentials.role} panel</Link>}
                         {user ? <Nav.Link onClick={onLogout}>Logout</Nav.Link> :
-                            <Link to="/login">Login</Link>}
+                            <Link to="/login" className="nav-link">Login</Link>}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
