@@ -25,13 +25,14 @@ const MenuBar = ({user, logout}: MenuBarProps) => {
                 <Navbar.Brand>
                     <img src={cov_logo} width="40" height="40"></img>
                 </Navbar.Brand>
-                <Navbar.Brand href="/">Portal Covid</Navbar.Brand>
+                <Link to="/" className="navbar-brand">Portal Covid</Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="feed">Covid feed</Nav.Link>
-                        <Nav.Link href="news">Covid news</Nav.Link>
-                        <Nav.Link href="shop">Covid shop</Nav.Link>
+
+                        <Link to="/feed">Covid feed</Link>
+                        <Link to="/news">Covid news</Link>
+                        <Link to="/shop">Covid shop</Link>
                     </Nav>
                     <Nav>
                         {user && <Link to="/panel"> {user.credentials.role} panel</Link>}
