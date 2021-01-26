@@ -8,6 +8,7 @@ import Login from "./Login/Login";
 import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom"
 import {IUser} from "./Login/IUser";
 import Panel from "./LoginPanel/Panel";
+import Register from "./Register/Register";
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
                     <Route path="/shop" component={CovidShop}/>
                     <Route path="/panel" render={() => <Panel user={user!}/>}/>
                     <Route path="/login" render={() => <Login setUser={setUser} />}/>
+                    <Route path="/register" render={() => <Register />}/>
                 </Switch>
             </div>
         </Router>

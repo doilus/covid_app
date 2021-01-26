@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import '../App.css';
-import './LoginApp.scss';
+import './LoginRegister.scss';
 import {Col, Container, Row} from "react-bootstrap";
 import {Button, FormControl, IconButton, Input, InputAdornment, InputLabel} from "@material-ui/core";
 import {Visibility, VisibilityOff, Done} from "@material-ui/icons";
@@ -94,16 +94,18 @@ const Login = ({setUser}: UserProps) => {
                 </Col>
             </Row>
             <Row className="justify-content-md-center" style={{marginTop: "20px"}}>
-                <Col sm={4}>
+                <Col sm={3}>
                     <Button
                         variant="contained"
                         color="primary"
-                        // className={classes.button}
                         endIcon={<Done>login</Done>}
                         onClick={handleLogin}
                     >
                         Send
                     </Button>
+                </Col>
+                <Col sm={3}>
+                    <span>Forgot password</span>
                 </Col>
             </Row>
         </Container>
