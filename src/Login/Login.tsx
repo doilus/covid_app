@@ -7,6 +7,7 @@ import {Visibility, VisibilityOff, Done} from "@material-ui/icons";
 import {USERS} from "./InMemoryUsers";
 import {IUser} from "./IUser";
 import {useHistory} from "react-router-dom";
+import {useSnackbar} from "notistack";
 
 type UserProps = {
     setUser: (username:IUser) => void
@@ -14,6 +15,7 @@ type UserProps = {
 
 const Login = ({setUser}: UserProps) => {
     let history = useHistory();
+    const {enqueueSnackbar} = useSnackbar();
     const [values, setValues] = useState({
         username: "",
         password: "",
@@ -36,12 +38,13 @@ const Login = ({setUser}: UserProps) => {
     const handleLogin = () => {
         const user: IUser | undefined = USERS.find((user: IUser) => user.credentials.login === values.username && user.credentials.password === values.password);
         if (user) {
-            alert(`Logged as: ${user.credentials.login}`);
+            enqueueSnackbar(`Logged successfuly! Welcome ${user.credentials.login}`, {variant: 'success'});
             setValues({...values, loginError: false});
             setUser(user);
             history.push("/");
         } else {
             setValues({...values, loginError: true});
+            enqueueSnackbar(`Wrong credentials!`, {variant: 'error'});
         }
     }
 
