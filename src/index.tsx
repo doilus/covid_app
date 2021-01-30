@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {SnackbarProvider} from "notistack";
 
 
+if (process.env.NODE_ENV !== "development")
+    console.log = () => {};
+
 ReactDOM.render(
     <SnackbarProvider maxSnack={3} anchorOrigin={{vertical:'top', horizontal:'right'}}>
         <React.StrictMode>

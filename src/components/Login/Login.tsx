@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
-import '../App.css';
+import '../../App.css';
 import './LoginRegister.scss';
 import {Col, Container, Row} from "react-bootstrap";
 import {Button, FormControl, IconButton, Input, InputAdornment, InputLabel} from "@material-ui/core";
-import {Visibility, VisibilityOff, Done} from "@material-ui/icons";
-import {USERS} from "./InMemoryUsers";
+import {Done, Visibility, VisibilityOff} from "@material-ui/icons";
 import {IUser} from "./IUser";
 import {useHistory} from "react-router-dom";
 import {useSnackbar} from "notistack";
+import {MockUsers} from "../../mockData/InMemoryUsers";
 
 type UserProps = {
-    setUser: (username:IUser) => void
+    setUser: (username: IUser) => void
 }
 
 const Login = ({setUser}: UserProps) => {
@@ -36,7 +36,7 @@ const Login = ({setUser}: UserProps) => {
     };
 
     const handleLogin = () => {
-        const user: IUser | undefined = USERS.find((user: IUser) => user.credentials.login === values.username && user.credentials.password === values.password);
+        const user: IUser | undefined = MockUsers.USERS.find((user: IUser) => user.credentials.login === values.username && user.credentials.password === values.password);
         if (user) {
             enqueueSnackbar(`Logged successfuly! Welcome ${user.credentials.login}`, {variant: 'success'});
             setValues({...values, loginError: false});

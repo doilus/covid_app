@@ -2,7 +2,7 @@ import Navbar from "react-bootstrap/Navbar";
 import {Nav} from "react-bootstrap";
 import React from "react";
 import cov_logo from "./cov_logo.svg";
-import {IUser} from "./Login/IUser";
+import {IUser} from "./components/Login/IUser";
 import {Link, useHistory} from "react-router-dom";
 
 type MenuBarProps = {

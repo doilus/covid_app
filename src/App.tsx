@@ -4,11 +4,11 @@ import MenuBar from './MenuBar';
 import CovidShop from "./ShopComponents/front/CovidShop";
 import CovidFeed from "./CovidFeed";
 import CovidNews from "./CovidNews";
-import Login from "./Login/Login";
+import Login from "./components/Login/Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
-import {IUser} from "./Login/IUser";
-import Panel from "./LoginPanel/Panel";
-import Register from "./Register/Register";
+import {IUser} from "./components/Login/IUser";
+import Panel from "./components/LoginPanel/Panel";
+import Register from "./components/Register/Register";
 import {useSnackbar} from "notistack";
 
 
