@@ -1,10 +1,13 @@
+.shopProducts {
+  align-items: center;
+  align-content: center;
+  margin-left: 7%;
+}
+
 .product-cell {
   display: inline-flex;
   flex-wrap: wrap;
   grid-auto-flow: column;
-  gap: 4px;
-  justify-content: center;
-  align-content: center;
 }
 
 .product {
