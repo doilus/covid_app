@@ -2,22 +2,47 @@ import React from "react";
 import "../css/ProductPanel.scss"
 import Product from "../interfaces/Product"
 
-class ProductPanel extends React.Component {
+interface ProductPanelProps {
+    filteredProduct: string
+}
 
-    state = {products: []}
+class ProductPanel extends React.Component<ProductPanelProps, {}> {
 
-    componentDidMount() {
+    state = {
+        products: [],
+        filter: ""
+    }
 
-        const auth = window.btoa("admin@test.com" + ':' + "test");
-        const request = {
-            headers: {'Authorization': 'Basic ' + auth}
-        };
-        fetch('http://localhost:8080/product/all', request)
+    constructor(props: ProductPanelProps) {
+        super(props);
+    }
+
+    fetchDataFromServer = (url: string) => {
+        fetch(url)
             .then(res => res.json())
             .then((data) => {
                 this.setState({products: data});
             })
             .catch(console.log)
+    }
+
+    componentDidMount() {
+
+        // const auth = window.btoa("admin@test.com" + ':' + "test");
+        //  const request = {
+        //     //headers: {'Authorization': 'Basic ' + auth}
+        //  };
+        let productURI = "http://localhost:8080/product/all";
+        this.fetchDataFromServer(productURI);
+    }
+
+    componentDidUpdate(prevProps: Readonly<ProductPanelProps>, prevState: Readonly<{}>, snapshot?: any) {
+        if (this.props.filteredProduct !== prevProps.filteredProduct) {
+            let currFilter = this.props.filteredProduct;
+            let productURI = currFilter === "" ? "http://localhost:8080/product/all" :
+                "http://localhost:8080/product/category/" + currFilter;
+            this.fetchDataFromServer(productURI);
+        }
     }
 
     render() {
@@ -51,9 +76,5 @@ class ProductPanel extends React.Component {
     }
 }
 
-function
-
-callItems(name: string) {
-}
 
 export default ProductPanel;
