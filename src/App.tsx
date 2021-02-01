@@ -3,7 +3,7 @@ import './App.css';
 import MenuBar from './MenuBar';
 import CovidShop from "./ShopComponents/front/CovidShop";
 import CovidFeed from "./CovidFeed";
-import CovidNews from "./CovidNews";
+import CovidNews from "./CovidNews/CovidNews";
 import Login from "./Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
