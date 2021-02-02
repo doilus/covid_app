@@ -5,32 +5,29 @@ export const shopItems =
     [
         {
             Name: "Maseczki",
-            action: callItems("Maseczki"),
             ikon: <GiGasMask/>,
-            cName: "nav-text"
+            cName: "nav-text",
+            cat: "mask"
         },
         {
             Name: "Artykuły do dezynfekcji",
-            action: callItems("Dezynfekcja"),
             ikon: <GiSpiralBottle/>,
-            cName: "nav-text"
+            cName: "nav-text",
+            cat: "hygiene_products"
         },
         {
             Name: "Suplementy",
-            action: callItems("Suplemeny"),
             ikon: <GiMedicinePills/>,
-            cName: "nav-text"
+            cName: "nav-text",
+            cat: "suplements"
         },
         {
             Name: "Książki",
-            action: callItems("Ksiazki"),
             ikon: <ImBooks/>,
-            cName: "nav-text"
+            cName: "nav-text",
+            cat: "books"
         }
     ];
 
-function callItems(name: string) {
-    return "aaa";
-}
 
 
