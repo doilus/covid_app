@@ -5,6 +5,10 @@ import CovidShop from "./ShopComponents/front/CovidShop";
 import CovidFeed from "./CovidFeed";
 import CovidNews from "./CovidNews/CovidNews";
 import FormMedicalCheck from "./FormMedicalCheck"
+<<<<<<< HEAD
+=======
+import ShopBasket from "./ShopComponents/front/ShopBasket";
+>>>>>>> DamGorEx-master
 import Login from "./Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
@@ -30,6 +34,10 @@ function App() {
                     <Route path="/news" component={CovidNews}></Route>
                     <Route path="/shop" component={CovidShop}></Route>
                     <Route path="/medicalcheck" component={FormMedicalCheck}></Route>
+<<<<<<< HEAD
+=======
+                    <Route path="/mybasket" component={ShopBasket}></Route>
+>>>>>>> DamGorEx-master
                     <Route path="/login" component={Login}></Route>
                 </Switch>
             </div>

@@ -2,6 +2,7 @@ import Navbar from "react-bootstrap/Navbar";
 import {Nav} from "react-bootstrap";
 import React from "react";
 import cov_logo from "./cov_logo.svg";
+import {RiShoppingBasketLine} from "react-icons/all";
 
 class MenuBar extends React.Component {
     render() {
@@ -23,6 +24,9 @@ class MenuBar extends React.Component {
                         <Nav>
                             <Nav.Link href="medicalcheck"> Zapis na badania</Nav.Link>
                             <Nav.Link href="login">Login</Nav.Link>
+                        </Nav>
+                        <Nav>
+                            <Nav.Link href="mybasket"><RiShoppingBasketLine/></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
