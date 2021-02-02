@@ -32,7 +32,6 @@
         transform: rotate(360deg);
     }
 }
-
 .headerRaport {
     margin: auto;
     width: 50%;
@@ -95,30 +94,30 @@
     margin-top: 20px;
 }
 
-.tableCases,
-.tableCases th,
-.tableCases td {
-    border: 1px solid #2D435E;
-    padding: 5px;
-}
+    .tableCases,
+    .tableCases th,
+    .tableCases td {
+        border: 1px solid #2D435E;
+        padding: 5px;
+    }
 
-.tableCases th {
-    color: #2D435E;
-    background: rgba(23, 162, 184, 0.3);
-    text-align: center;
-}
+        .tableCases th {
+            color: #2D435E;
+            background: rgba(23, 162, 184, 0.3);
+            text-align: center;
+        }
 
-.tableCases td {
-    text-align: right;
-}
+        .tableCases td {
+            text-align: right;
+        }
 
-.tableCases tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+        .tableCases tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-.tableCases tr:hover {
-    background-color: #ddd;
-}
+        .tableCases tr:hover {
+            background-color: #ddd;
+        }
 
 @media all and (max-width: 720px) {
 
