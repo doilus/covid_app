@@ -21,13 +21,8 @@
     "react-icons": "^3.11.0",
     "react-lorem-ipsum": "^1.4.9",
     "react-router-dom": "^5.2.0",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     "react-scripts": "^3.4.3",
-=======
->>>>>>> 6ce9ebd9745bf4cda3c53517297e9abd399ec8ba
->>>>>>> DamGorEx-master
+
     "typescript": "^3.9.7"
   },
   "scripts": {
