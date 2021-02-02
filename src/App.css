@@ -32,7 +32,7 @@
     transform: rotate(360deg);
   }
 }
-<<<<<<< HEAD
+
 
 .formMedical {
     font-family: Playfair Display, Georgia, Times New Roman, serif;
@@ -42,15 +42,14 @@
     grid-template-columns: [first]150px [lane2]350px;
     grid-row-gap: 1rem;
     column-gap: 1rem;
-=======
-<<<<<<< HEAD
+}
 .headerRaport {
     margin: auto;
     width: 50%;
     text-align: center;
     padding: 15px;
     background-color: rgba(23, 162, 184, 0.3);
->>>>>>> DamGorEx-master
+
     color: #138EA1;
    
     background-color: rgba(19, 142, 161, 0.2);
@@ -220,9 +219,6 @@ abbr {
 }
 
 
-<<<<<<< HEAD
-=======
-=======
 
 .formMedical {
     font-family: Playfair Display, Georgia, Times New Roman, serif;
@@ -401,7 +397,6 @@ abbr {
 }
 
 
->>>>>>> DamGorEx-master
 
 
 @media all and (max-width: 375px) {
@@ -417,12 +412,7 @@ abbr {
     .nameInput,
     .surnameInput,
     .dateFromInput,
-    .dateToInput{
+    .dateToInput {
         width: 300px;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6ce9ebd9745bf4cda3c53517297e9abd399ec8ba
->>>>>>> DamGorEx-master
