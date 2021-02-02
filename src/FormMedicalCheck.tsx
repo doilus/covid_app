@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import './App.css';
 
-function CovidFeed() {
+function CovidMedicalCheck() {
     return (<div>
         <main className ="mainForm">
 
@@ -41,4 +41,4 @@ function CovidFeed() {
 
 }
 
-export default CovidFeed;
+export default CovidMedicalCheck;
