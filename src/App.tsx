@@ -1,4 +1,4 @@
-﻿import React, {useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import MenuBar from './MenuBar';
 import CovidShop from "./ShopComponents/front/CovidShop";
@@ -14,7 +14,6 @@ import {IUser} from "./components/Login/IUser";
 import Panel from "./components/LoginPanel/Panel";
 import Register from "./components/Register/Register";
 import {useSnackbar} from "notistack";
-
 
 const App = () => {
     const [user, setUser] = useState<IUser | undefined>(undefined);
@@ -48,9 +47,6 @@ const App = () => {
                     <Route path="/login" render={() => <Login setUser={setUser}/>}/>
                     <Route path="/register" render={() => <Register/>}/>
                     <Route path="/mybasket" component={ShopBasket}></Route>
-
-                   
-                    
                 </Switch>
             </div>
         </Router>

@@ -25,7 +25,6 @@
 }
 
 @keyframes App-logo-spin {
-
   from {
     transform: rotate(0deg);
   }
@@ -33,10 +32,6 @@
     transform: rotate(360deg);
   }
 }
-
-
-
-
 .formMedical {
     font-family: Playfair Display, Georgia, Times New Roman, serif;
     font-weight: bold;
@@ -216,8 +211,15 @@ abbr {
     }
 }
 
+nav a{
+    color: rgba(255,255,255,.5);
+}
 
+nav a:hover{
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
 
+}
 
 @media all and (max-width: 375px) {
     .formButtons,
@@ -236,7 +238,3 @@ abbr {
         width: 300px;
     }
 }
-
-
-
-
