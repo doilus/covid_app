@@ -5,15 +5,14 @@ import CovidShop from "./ShopComponents/front/CovidShop";
 import CovidFeed from "./CovidFeed";
 import CovidNews from "./CovidNews/CovidNews";
 import FormMedicalCheck from "./FormMedicalCheck"
-
-import ShopBasket from "./ShopComponents/front/ShopBasket";
-
+import ShopBasket from "./ShopComponents/front/ShopSummary";
 import Login from "./components/Login/Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import {IUser} from "./components/Login/IUser";
 import Panel from "./components/LoginPanel/Panel";
 import Register from "./components/Register/Register";
 import {useSnackbar} from "notistack";
+
 
 const App = () => {
     const [user, setUser] = useState<IUser | undefined>(undefined);
@@ -29,7 +28,7 @@ const App = () => {
                 <li> Damian Goraj s18085</li>
                 <li> Dominika Ługowska s17226</li>
                 <li> Michelle Herok s15474</li>
-                <li> Marcin Chojnacki s15074 </li>
+                <li> Marcin Chojnacki s15074</li>
             </div>
         </div>
     );
@@ -51,8 +50,5 @@ const App = () => {
             </div>
         </Router>
     );
-
-
 }
-
 export default App;
