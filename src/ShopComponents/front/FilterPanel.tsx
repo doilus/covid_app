@@ -1,9 +1,8 @@
 import React from "react";
 import {shopItems} from "./ShopItems"
 import "../css/FilterPanel.scss"
-import ProductInBasketCollection from "../interfaces/ProductInBasketCollection";
-import ProductInBasket from "../interfaces/ProductInBasket";
-import {AiOutlineMinus, AiOutlinePlus, RiDeleteBin5Line} from "react-icons/all";
+import * as ShopUtils from "../utils/ShopUtils";
+import Basket from "../front/Basket";
 
 interface myPropsFilterPanel {
     filterProduct: (text: string) => void
@@ -28,20 +27,18 @@ class FilterPanel extends React.Component<myPropsFilterPanel, {}> {
 
     componentDidUpdate(prevProps: Readonly<myPropsFilterPanel>, prevState: Readonly<{}>, snapshot?: any) {
         if (this.props.prodToAdd !== prevProps.prodToAdd) {
-            this.setState({productsInBasket: this.getPrLstFromLocSt()});
+            this.setState({productsInBasket: ShopUtils.getPrLstFromLocSt()});
         }
     }
 
     componentDidMount() {
-        this.setState({productsInBasket: this.getPrLstFromLocSt()});
+        this.setState({productsInBasket: ShopUtils.getPrLstFromLocSt()});
     }
+
 
     render() {
         const prInBasket = this.state.productsInBasket;
-        const aniMarker = this.state.aniMarker;
-        const callOwner = this.state.owner;
         const prodToAdd = this.props.prodToAdd;
-        console.log(prodToAdd);
         return (
             <div className="filter-panel-back">
                 <div className="filter-panel-item">
@@ -67,92 +64,31 @@ class FilterPanel extends React.Component<myPropsFilterPanel, {}> {
                         }
                     </div>
                 </div>
-                <div className="basket-shop-display">
-                    <p>Podgląd koszyka:</p>
-                    <table className="basket-table">
-                        {prInBasket.map((p: ProductInBasket, index) => {
-                            return (
-                                <tr
-                                    // @ts-ignore.
-                                    aniMarker={(aniMarker !== 0 && index === callOwner) ? aniMarker :
-                                        (p.name + p.qty === prodToAdd) ? 1 : 0}
-                                    className="basket-table-row"
-                                    onAnimationEnd={() => {
-                                        this.setState({aniMarker: 0})
-                                    }}
-                                >
-                                    <td>
-                                        <li className="basket-table-first-cell">{p.name}</li>
-                                    </td>
-                                    <td>{" x" + p.qty}</td>
-                                    <div className="basket-table-buttons">
-                                        <td onClick={() => {
-                                            this.handleAdd(p.name, index)
-                                        }}
-
-                                        ><AiOutlinePlus/></td>
-                                        <td><AiOutlineMinus onClick={() => this.handleMinus(p.name, index)}/></td>
-                                        <td><RiDeleteBin5Line onClick={() => {
-                                            this.handleDelete(p.name)
-                                        }}/></td>
-                                    </div>
-                                </tr>
-                            );
-                        })}
-                    </table>
-                </div>
+                <Basket handleAdd={this.handleAdd} handleMinus={this.handleMinus} handleDelete={this.handleDelete}
+                        prodToAdd={prodToAdd} prInBasket={prInBasket}/>
             </div>
         );
     };
 
-    private getPrLstFromLocSt = () => {
-        const productsInLocStr: ProductInBasketCollection = JSON.parse(localStorage.getItem("productsInBasket") as any);
-        return productsInLocStr.products;
-    }
-
-    private handleAdd(product: string, index: number) {
-        this.updateBasket(product, BasketAction.ADD, 1);
+    handleAdd = (product: string, index: number) => {
+        const newProdInBasket = ShopUtils.updateBasket(product, BasketAction.ADD, 1);
         this.setState({
-            aniMarker: 1,
-            owner: index
-        })
+            productsInBasket: newProdInBasket
+        });
     }
 
-    private updateBasket(product: string, action: BasketAction, qty: number) {
-        const prLstFromLocSt = this.getPrLstFromLocSt();
-        prLstFromLocSt.forEach((p) => {
-            if (p.name === product) {
-                switch (action) {
-                    case BasketAction.ADD:
-                        p.qty = p.qty + qty;
-                        break;
-                    case BasketAction.SUB:
-                        p.qty = p.qty - qty;
-                        break;
-                    case BasketAction.REMOVE:
-                        p.qty = 0;
-                        break;
-                }
-            }
-        })
-        const newProdInBasket = prLstFromLocSt.filter(p => p.qty > 0);
-        console.log(newProdInBasket.toString())
-        this.setState({productsInBasket: newProdInBasket});
-        const newBasket: ProductInBasketCollection = {products: newProdInBasket};
-        localStorage.setItem("productsInBasket", JSON.stringify(newBasket));
-    }
-
-    private async handleMinus(product: string, index: number) {
-        this.updateBasket(product, BasketAction.SUB, 1);
+    handleMinus = (product: string, index: number) => {
+        const newProdInBasket = ShopUtils.updateBasket(product, BasketAction.SUB, 1);
         this.setState({
-            aniMarker: -1,
-            owner: index
+            productsInBasket: newProdInBasket
         })
-
     }
 
-    private handleDelete(product: string) {
-        this.updateBasket(product, BasketAction.REMOVE, 0);
+    handleDelete = (product: string) => {
+        const newProdInBasket = ShopUtils.updateBasket(product, BasketAction.REMOVE, 0);
+        this.setState({
+            productsInBasket: newProdInBasket
+        })
     }
 }
 

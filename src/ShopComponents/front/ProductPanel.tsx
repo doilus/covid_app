@@ -5,11 +5,11 @@ import Product from "../interfaces/Product"
 interface ProductPanelProps {
     filteredProduct: string,
 
-    addToBasket(product: string): void
+    addToBasket(product: string, price: number): void
 }
 
 
-class ProductPanel extends React.Component<ProductPanelProps, {}> {
+export default class ProductPanel extends React.Component<ProductPanelProps, {}> {
 
     state = {
         products: [],
@@ -69,7 +69,7 @@ class ProductPanel extends React.Component<ProductPanelProps, {}> {
                                     </p>
                                     <p>
                                         <button onClick={() => {
-                                            this.props.addToBasket(product.name)
+                                            this.props.addToBasket(product.name, product.price)
                                         }}>
                                             Dodaj do koszyka
                                         </button>
@@ -83,6 +83,3 @@ class ProductPanel extends React.Component<ProductPanelProps, {}> {
         );
     }
 }
-
-
-export default ProductPanel;

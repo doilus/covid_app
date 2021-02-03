@@ -5,7 +5,7 @@ import CovidShop from "./ShopComponents/front/CovidShop";
 import CovidFeed from "./CovidFeed";
 import CovidNews from "./CovidNews/CovidNews";
 import FormMedicalCheck from "./FormMedicalCheck"
-import ShopBasket from "./ShopComponents/front/ShopBasket";
+import ShopBasket from "./ShopComponents/front/ShopSummary";
 import Login from "./Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
