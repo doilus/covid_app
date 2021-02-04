@@ -32,7 +32,7 @@ export default class Basket extends React.Component<BasketProp> {
         let callOwner = this.state.owner;
         return (
             <div className="basket-shop-display">
-                <p>Podgląd koszyka:</p>
+                <h1>Podgląd koszyka:</h1>
                 <Table hover className="basket-table">
                     {prInBasket.map((p: ProductInBasket, index) => {
                         return (
@@ -68,8 +68,7 @@ export default class Basket extends React.Component<BasketProp> {
                     })}
                 </Table>
                 <div className="basket-total">
-                    <p>Suma:</p>
-                    <p>{ShopUtils.getTotalPrice()} zł</p>
+                    <h1>Suma: {ShopUtils.getTotalPrice()} zł</h1>
                 </div>
             </div>
         );

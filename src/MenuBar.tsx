@@ -6,19 +6,14 @@ import {RiShoppingBasketLine} from "react-icons/all";
 import {IUser} from "./components/Login/IUser";
 import {Link, useHistory} from "react-router-dom";
 
-
 type MenuBarProps = {
     user: IUser | undefined,
     logout: () => void
 }
 
-
 const MenuBar = ({user, logout}: MenuBarProps) => {
 
-
     let history = useHistory();
-
-
     const onLogout = () => {
         logout();
         history.push("/")

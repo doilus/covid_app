@@ -67,6 +67,7 @@
 .phoneInput,
 .addressInput,
 .cityInput,
+.zipInput,
 .dateFromInput,
 .dateToInput {
     opacity: 60%;
@@ -224,13 +225,14 @@ nav a:hover{
 @media all and (max-width: 375px) {
     .formButtons,
     .headerMedical,
+    .cityInput,
     .header2,
     .headerDetails,
     .dateInput,
     .emailInput,
     .phoneInput,
     .addressInput,
-    .cityInput,
+    .zipInput,
     .nameInput,
     .surnameInput,
     .dateFromInput,

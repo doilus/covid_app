@@ -5,8 +5,12 @@ export enum BasketAction {
 }
 
 export const getPrLstFromLocSt = () => {
-    const productsInLocStr: ProductInBasketCollection = JSON.parse(localStorage.getItem("productsInBasket") as any);
-    return productsInLocStr.products;
+    const lcStorProducts = localStorage.getItem("productsInBasket");
+    if (lcStorProducts != null) {
+        const productsInLocStr: ProductInBasketCollection = JSON.parse(lcStorProducts);
+        return productsInLocStr.products;
+    }
+    return [];
 }
 
 export const updateBasket = (product: string, action: BasketAction, qty: number) => {
@@ -35,4 +39,19 @@ export const getTotalPrice = () => {
     if (getPrLstFromLocSt().length == 0) return 0;
     return getPrLstFromLocSt().map((p) => p.price * p.qty)
         .reduce((pn, cn) => pn + cn);
-}
+};
+
+export const fetchDataFromServer = (url: string, callback: (p: string) => void, requestOption: object) => {
+    // const auth = window.btoa("admin@test.com" + ':' + "test");
+    const request = {
+        cache: "no-cache"
+        //headers: {'Authorization': 'Basic ' + auth}
+    };
+
+    fetch(url, requestOption)
+        .then(res => res.json())
+        .then((data) => {
+            callback.call(0, data);
+        })
+        .catch(console.log)
+};
