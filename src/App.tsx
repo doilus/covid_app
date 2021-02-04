@@ -1,13 +1,11 @@
-﻿import React, {useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import MenuBar from './MenuBar';
 import CovidShop from "./ShopComponents/front/CovidShop";
 import CovidFeed from "./CovidFeed";
 import CovidNews from "./CovidNews/CovidNews";
 import FormMedicalCheck from "./FormMedicalCheck"
-
-import ShopBasket from "./ShopComponents/front/ShopBasket";
-
+import ShopBasket from "./ShopComponents/front/ShopSummary";
 import Login from "./components/Login/Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import {IUser} from "./components/Login/IUser";
@@ -30,7 +28,7 @@ const App = () => {
                 <li> Damian Goraj s18085</li>
                 <li> Dominika Ługowska s17226</li>
                 <li> Michelle Herok s15474</li>
-                <li> Marcin Chojnacki s15074 </li>
+                <li> Marcin Chojnacki s15074</li>
             </div>
         </div>
     );
@@ -48,15 +46,9 @@ const App = () => {
                     <Route path="/login" render={() => <Login setUser={setUser}/>}/>
                     <Route path="/register" render={() => <Register/>}/>
                     <Route path="/mybasket" component={ShopBasket}></Route>
-
-                   
-                    
                 </Switch>
             </div>
         </Router>
     );
-
-
 }
-
 export default App;
