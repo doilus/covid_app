@@ -12,7 +12,7 @@ class CovidShop extends React.Component {
             productFilter: n
         });
     };
-    addToBasket = (n: string) => {
+    addToBasket = (n: string, price: number) => {
         console.log(n);
         let lc: any = localStorage.getItem("productsInBasket");
         console.log(lc);
@@ -27,13 +27,13 @@ class CovidShop extends React.Component {
                 }
             });
             if (!prodExisted) {
-                let newProd: ProductInBasket = {name: n, qty: 1};
+                let newProd: ProductInBasket = {name: n, qty: 1, price: price};
                 products.products.push(newProd);
                 this.setState({lastItemAdded: n + 1})
             }
             localStorage.setItem("productsInBasket", JSON.stringify(products));
         } else {
-            const firstProdInBasket: ProductInBasket = {name: n, qty: 1};
+            const firstProdInBasket: ProductInBasket = {name: n, qty: 1, price: price};
             const firstProdInBasketCol: ProductInBasketCollection = {products: [firstProdInBasket]};
             localStorage.setItem("productsInBasket", JSON.stringify(firstProdInBasketCol));
         }

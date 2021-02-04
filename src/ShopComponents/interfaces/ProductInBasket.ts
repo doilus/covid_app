@@ -1,6 +1,7 @@
 interface ProductInBasket {
     name: string,
-    qty: number
+    qty: number,
+    price: number
 }
 
 export default ProductInBasket;

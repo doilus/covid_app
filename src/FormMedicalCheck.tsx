@@ -1,4 +1,4 @@
-﻿import React, {ChangeEvent, FormEvent} from 'react';
+import React, {ChangeEvent, FormEvent} from 'react';
 import './App.css';
 
 export default class CovidMedicalCheck extends React.Component {
@@ -58,3 +58,4 @@ export default class CovidMedicalCheck extends React.Component {
         </div>);
     }
 }
+

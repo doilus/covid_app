@@ -32,120 +32,6 @@
     transform: rotate(360deg);
   }
 }
-<<<<<<< HEAD
-.headerRaport {
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(23, 162, 184, 0.3);
-    color: #138EA1;
-}
-
-.update {
-    color: grey;
-    margin: auto;
-    width: 50%;
-}
-
-.globalCases {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5px;
-}
-
-.cases,
-.deaths,
-.recovery {
-    display: flex;
-    font-size: 45px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-}
-
-.cases {
-    color: #138EA1;
-}
-
-.deaths {
-    color: #DB3E4B;
-}
-
-.recovery {
-    color: #3DD62F;
-}
-
-.reportedCases {
-    color: #2D435E;
-    padding-top: 10px;
-    padding-left: 50px;
-    font-size: 25px;
-}
-
-.search {
-    padding-left: 100px;
-}
-
-.tableCases {
-    width: 90%;
-    margin-left: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-}
-
-    .tableCases,
-    .tableCases th,
-    .tableCases td {
-        border: 1px solid #2D435E;
-        padding: 5px;
-    }
-
-        .tableCases th {
-            color: #2D435E;
-            background: rgba(23, 162, 184, 0.3);
-            text-align: center;
-        }
-
-        .tableCases td {
-            text-align: right;
-        }
-
-        .tableCases tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .tableCases tr:hover {
-            background-color: #ddd;
-        }
-
-@media all and (max-width: 720px) {
-
-
-    .globalCases {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .cases,
-    .deaths,
-    .recovery {
-        padding-right: 200px;
-    }
-
-    .tableCases {
-        margin-left: 10px;
-    }
-
-    .search,
-    .reportedCases {
-        padding-left: 10px;
-    }
-}
-
-
-=======
 
 .formMedical {
     font-family: Playfair Display, Georgia, Times New Roman, serif;
@@ -158,7 +44,7 @@
     color: #138EA1;
    
     background-color: rgba(19, 142, 161, 0.2);
-    ;
+
 }
 
 .headerMedical,
@@ -184,12 +70,16 @@
 .phoneInput,
 .addressInput,
 .cityInput,
+.zipInput,
 .dateFromInput,
 .dateToInput {
     opacity: 60%;
     width: 345px;
     padding: 7px 10px 12px 10px;
+    border-radius: 15px;
+    border: 0px solid #138EA1;
 }
+
 .dateInput,
 .emailInput,
 .phoneInput,
@@ -197,11 +87,13 @@
 .cityInput {
     grid-column: 2 / span 2;
 }
+
 .headerDetails,
 .headerMedical {
     padding-top: 30px;
     
 }
+
 .header2,
 .headerDetails {
     border-bottom: 1px solid;
@@ -224,6 +116,7 @@
 
     border-radius: 2px;
 }
+
 .formButtonCancel {
     color: white;
     text-decoration: none;
@@ -235,6 +128,7 @@
     border: none;
     border-radius: 2px;
 }
+
     .formButtonCancel:hover {
         text-decoration: none;
         color: white;
@@ -321,21 +215,27 @@ abbr {
 
 
 
+nav a{
+    color: rgba(255,255,255,.5);
 }
 
+nav a:hover {
+    color: rgba(255, 255, 255, .75);
+    text-decoration: none;
 
-
+}
 
 @media all and (max-width: 375px) {
     .formButtons,
     .headerMedical,
+    .cityInput,
     .header2,
     .headerDetails,
     .dateInput,
     .emailInput,
     .phoneInput,
     .addressInput,
-    .cityInput,
+    .zipInput,
     .nameInput,
     .surnameInput,
     .dateFromInput,
@@ -343,4 +243,3 @@ abbr {
         width: 300px;
     }
 }
->>>>>>> 6ce9ebd9745bf4cda3c53517297e9abd399ec8ba
