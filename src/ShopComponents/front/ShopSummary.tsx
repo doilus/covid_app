@@ -69,8 +69,10 @@ class ShopSummary extends React.Component {
         return (
             <div className="summary-background">
                 <div className="summary-wrapper">
+                    <div className="basketSummary">
                     <Basket handleAdd={this.handleAdd} handleMinus={this.handleMinus} handleDelete={this.handleDelete}
                             prodToAdd={prToAdd} prInBasket={prInBasket}/>
+                    </div>
                     <div className="summary-user-data">
                         <h1>Dane odbiorcy przesyłki</h1>
                         <form onSubmit={this.onSubmit} className="order-form">
@@ -117,7 +119,7 @@ class ShopSummary extends React.Component {
                                        placeholder="podaj miasto" required/>
                                 <label htmlFor="shpMethod">Metoda wysyłki: <abbr title="required"
                                                                                  aria-label="required">*</abbr></label>
-                                <input onChange={this.onChange} list="browsers" name="shpMethod" id="shpMethod"/>
+                                <input onChange={this.onChange}className="methodSend" list="browsers" name="shpMethod" id="shpMethod"/>
                                 <datalist id="browsers">
                                     {shpMethList.map(p => {
 

@@ -182,10 +182,14 @@
 .addressInput,
 .cityInput,
 .dateFromInput,
-.dateToInput {
+.dateToInput,
+.zipInput,
+.methodSend{
     opacity: 60%;
     width: 345px;
     padding: 7px 10px 12px 10px;
+    border-radius: 8px ;
+    border: 0px solid ;
 }
 .dateInput,
 .emailInput,
@@ -272,6 +276,7 @@ abbr {
     text-align: center;
     font-size: 4vw;
     font-family: Playfair Display, Georgia, Times New Roman, serif;
+    list-style-type: none;
 }
 
 
