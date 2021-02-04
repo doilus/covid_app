@@ -4,8 +4,12 @@
     "\\public",
     "\\public\\iconsCovidNews",
     "\\src",
+    "\\src\\components",
+    "\\src\\components\\Login",
+    "\\src\\components\\LoginPanel",
+    "\\src\\components\\Register",
     "\\src\\CovidNews"
   ],
-  "SelectedNode": "\\src\\CovidFeed.tsx",
+  "SelectedNode": "\\src\\MenuBar.tsx",
   "PreviewInSolutionExplorer": false
 }

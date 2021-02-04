@@ -3,9 +3,22 @@ import {Nav} from "react-bootstrap";
 import React from "react";
 import cov_logo from "./cov_logo.svg";
 import {RiShoppingBasketLine} from "react-icons/all";
+import {IUser} from "./components/Login/IUser";
+import {Link, useHistory} from "react-router-dom";
 
-class MenuBar extends React.Component {
-    render() {
+type MenuBarProps = {
+    user: IUser | undefined,
+    logout: () => void
+}
+
+const MenuBar = ({user, logout}: MenuBarProps) => {
+
+    let history = useHistory();
+
+    const onLogout = () => {
+        logout();
+        history.push("/")
+    }
         return (
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
@@ -23,7 +36,10 @@ class MenuBar extends React.Component {
                         </Nav>
                         <Nav>
                             <Nav.Link href="medicalcheck"> Zapis na badania</Nav.Link>
-                            <Nav.Link href="login">Login</Nav.Link>
+                             {user && <><Link to="/panel" className="nav-link"> {user.credentials.role} panel</Link>
+                            <Nav.Link onClick={onLogout}>Logout</Nav.Link></>}
+                        {!user && <><Link to="/login" className="nav-link">Login</Link><Link to="/register"
+                                                                                             className="nav-link">Register</Link></>}
                         </Nav>
                         <Nav>
                             <Nav.Link href="mybasket"><RiShoppingBasketLine/></Nav.Link>
@@ -33,6 +49,6 @@ class MenuBar extends React.Component {
             </div>
         );
     }
-}
+
 
 export default MenuBar;
