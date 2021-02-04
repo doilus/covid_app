@@ -47,7 +47,7 @@ export default class ProductPanel extends React.Component<ProductPanelProps, {}>
 
     render() {
         return (
-            <div className="shopAll">
+
             <div className="shopProducts">
                 {this.state.products.map((product: Product) => {
                     const imgURI = "http://localhost:8080/image/" + product.image.id;
@@ -77,7 +77,7 @@ export default class ProductPanel extends React.Component<ProductPanelProps, {}>
                     )
                 })}
             </div>
-            </div>
+
         );
     }
 }
