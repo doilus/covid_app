@@ -11,7 +11,9 @@ const Panel = ({user}: PanelProps) => {
     })
 
     return (<div>
+        {user! &&
         <h1>Hello {user.name}</h1>
+        }
     </div>);
 }
 

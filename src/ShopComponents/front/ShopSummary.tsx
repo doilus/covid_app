@@ -3,6 +3,9 @@ import * as ShopUtils from "../utils/ShopUtils";
 import {BasketAction, fetchDataFromServer} from "../utils/ShopUtils";
 import Basket from "./Basket";
 import '../css/ShopSummary.css';
+import {Redirect} from "react-router-dom";
+import 'reactjs-popup/dist/index.css';
+import Popup from "../front/Popup";
 
 class ShopSummary extends React.Component {
 
@@ -18,7 +21,15 @@ class ShopSummary extends React.Component {
         zipcode: null,
         city: null,
         shpMethod: null,
-        orderSent: false
+        orderSent: false,
+        redirect: false,
+    }
+
+    togglePopup() {
+        this.setState({
+            orderSent: !this.state.orderSent,
+            redirect: true
+        });
     }
 
     componentDidMount() {
@@ -65,7 +76,17 @@ class ShopSummary extends React.Component {
         const prInBasket = this.state.productsInBasket;
         const prToAdd = this.state.prodToAdd;
         const shpMethList = this.state.shipMethods;
-        console.log("shpMethList " + shpMethList);
+        if (this.state.orderSent) {
+            return (
+                <Popup
+                    text='Close Me'
+                    closePopup={this.togglePopup.bind(this)}
+                />
+            );
+        } else if (this.state.redirect) {
+            this.setState({redirect: false})
+            return <Redirect to="/shop"/>
+        }
         return (
             <div className="summary-background">
                 <div className="summary-wrapper">
