@@ -26,10 +26,6 @@ class CovidNews extends React.Component {
           this.setState({ cases: data.Countries })
           this.setState({ global: data.Global})
           this.setState({ date: data.Date})		
-
-		  
-		  
-
         })
 
         .catch(console.log)
@@ -41,12 +37,44 @@ class CovidNews extends React.Component {
 	render() {
 	
 		return(
-        <div>
+      <body>
+
         <CovidNewsDate date = {this.state.date} />
-		<CovidGlobalData global = {this.state.global}  />
+        
+        <div className="covid-global-data">
+          <CovidGlobalData global = {this.state.global}/>
+        </div>
+        <div className="space-between-charts"></div>
+		    
         <CovidNewsChart cases =  {this.state.cases} />
+        <div className="space-between-charts"></div>
         <CovidNewsTable cases = {this.state.cases}  />
-        </div>)
+
+
+        <div className="footer">
+                      <div className="footerTop">
+                          CONTENT MANAGEMENT SYSTEM - PJATK
+                      </div>
+          
+                      <div className="footerBottom">
+                          <div className="footerBottomLeft">
+                              <a href="link1.html" className="footerOption"> LINK1 </a><div className="pStyle3"></div>
+                              <a href="link2.html" className="footerOption"> LINK2 </a><div className="pStyle3"></div>
+                              <a href="link3.html" className="footerOption"> LINK3 </a><div className="pStyle3"></div>
+                              <a href="link4.html" className="footerOption"> LINK4 </a><div className="pStyle3"></div>
+                          </div>
+                          <div className="footerBottomRight">
+                              DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
+                              MICHELLE HEROK <div className="pStyle3"></div>
+                              DAMIAN GORAJ <div className="pStyle3"></div>
+                              MARCIN CHOJNACKI
+                          </div>
+                      </div>
+          
+                  </div>
+          
+
+        </body>)
 	}
 }
 

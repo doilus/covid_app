@@ -92,6 +92,16 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
 .cases,
 .deaths,
 .recovery {
@@ -128,7 +138,7 @@
 .reportedCases {
     color: #2D435E;
     padding-top: 10px;
-    padding-left: 50px;
+    padding-left: 130px;
     font-size: 25px;
 }
 
@@ -136,7 +146,8 @@
     padding-left: 100px;
 }
 .table {
-    margin-left: 50px;
+    /* margin-left: 10px; */
+    padding-left: 80px;
 }
 .tableCases {
     width: 90%;
@@ -144,6 +155,16 @@
     font-family: Playfair Display, Georgia, Times New Roman, serif;
     margin-top: 20px;
 }
+
+
+
+
+
+
+
+
+
+
 
     .tableCases,
     .tableCases th,
@@ -177,6 +198,7 @@
         .tableCases tr:hover {
             background-color: #ddd;
         }
+
 .searchCase,
 input {
     padding-left: 50px;
@@ -190,6 +212,7 @@ input {
 }
 .searchName {
     padding-right: 10px;
+    padding-left: 80px;
 }
 .inputSearch {
     width: 125px;
@@ -238,4 +261,31 @@ input {
         font-size: 10px;
     }
     
+}
+
+
+
+.update-time {
+    font-family: 'SilkSerif-Light', serif;
+    color: gray;
+    
+}
+
+.time-position {
+    text-align: center;
+}
+
+
+.covid-global-data {
+    background-color: #414141;
+    color: white;
+    font-size: 36px;
+    letter-spacing: 1px;
+    font-family: 'SilkSerif-Light', serif;
+    padding: 70px 0px 70px 0px;
+    text-align: center;
+}
+
+.space-between-charts {
+    height: 100px;
 }
