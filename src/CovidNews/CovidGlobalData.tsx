@@ -18,13 +18,13 @@ const CovidGlobalData = ({ global }: {global:any}) => {
        
         <div className="globalCases">
             <img className="imageCases" src="iconsCovidNews/icon_cases.png" alt="Icons_cases"/>
-            <h2 className="cases">Zarażenia: </h2>
+            <h2 className="cases">ZARAZENIA: </h2>
             <h2 className="casesName"> {globalCase} </h2>
             <img className="imageDeath" src="iconsCovidNews/icon_deaths.png" alt="Icons_cases"/>
-            <h2 className="deaths">Zgony: </h2>
+            <h2 className="deaths">ZGONY: </h2>
             <h2 className="deathsName">{globalDea}</h2>
             <img className="imageRecovery" src="iconsCovidNews/icon_recovery.png" alt="Icons_cases"/>
-            <h2 className="recovery">Ozdrowienia:</h2>
+            <h2 className="recovery">OZDROWIENIA:</h2>
             <h2 className="recoveryName">{globalReco}</h2>
 
         </div>

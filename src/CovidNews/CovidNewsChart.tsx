@@ -33,7 +33,7 @@ const CovidNewsChart = ({ cases }: {cases:any}) => {
 			exportEnabled: true,
 			animationEnabled: true,
 			title: {
-				text: "Kraje z największą ilością zakażeń COVID-19 "
+				text: "Kraje z największą liczbą zakażeń COVID-19 "
 			},
 			data: [{
 			indexLabelPlacement: "outside",    //Try Changing to outside
