@@ -44,8 +44,10 @@ class CovidShop extends React.Component {
         const prodToAdd = this.state.lastItemAdded;
         return (<div className="CovidShop">
             <FilterPanel filterProduct={this.filterProduct} prodToAdd={prodToAdd}/>
+            <div className="shopAll">
             <ProductPanel filteredProduct={currentProductFilter} addToBasket={this.addToBasket}/>
-        </div>);
+            </div>
+            </div>);
     }
 }
 

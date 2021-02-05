@@ -34,7 +34,6 @@ export default class App extends React.Component {
             </div>
         </div>
     );
-
     render() {
         if (!this.state.user) {
             const user = localStorage.getItem("user");
