@@ -27,25 +27,32 @@ const CovidNewsTable= ({ cases }: {cases:any}) => {
       return (
     <div>
     <br/>
-        <div className="tableSearch">
-             <h2 className ="reportedCases">Odnotowane przypadki w poszczególnych krajach:</h2>    
+        {/* <div className="tableSearch">
+             <h2 className ="reportedCases"></h2>    
+        </div> */}
+          
+        <div className="wizyta-dane">
+              <p className="wizyta-dane-headers">LICZBA WYKRYTYCH PRZYPADKÓW W POSZCZEGÓLNYCH KRAJACH</p>
         </div>
+
         <label className="searchCase">
-            <span className ="searchName">Search:</span>
-            <input  className ="inputSearch" placeholder="Wpisz nazwę kraju" type="search" id="searchInput"/>
+            <div className ="searchName">Search:</div>
+            <div className="button-search">
+              <input  className ="inputSearch" placeholder="Wpisz nazwę kraju" type="search" id="searchInput"/>
+            </div>
         </label> 
         <div className ="table">
         <table className="tableCases" id="myTable">
         <thead>
             <tr>
-                <th>Kod</th>
-                <th>Kraj</th>
-                <th>Nowe przypadki</th>
-                <th className="totalTable">Wszystkie przypadki</th>
-                <th>Nowe zgony</th>
-                <th className="totalTable">Wszystkie zgony</th>
-                <th>Nowe ozdrowienia</th>
-                <th className="totalTable">Wszystkie ozdrowienia</th>
+                <th>KOD</th>
+                <th>KRAJ</th>
+                <th>NOWE PRZYPADKI</th>
+                <th className="totalTable">WSZYSTKIE PRZYPADKI</th>
+                <th>NOWE ZGONY</th>
+                <th className="totalTable">WSZYSTKIE ZGONY</th>
+                <th>NOWE OZDROWIENIA</th>
+                <th className="totalTable">WSZYSTKIE OZDROWIENIA</th>
             </tr>
             </thead>
              {cases.map((casee:any) => (

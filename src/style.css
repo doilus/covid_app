@@ -347,3 +347,55 @@ a.footerOption {
     color: white;
     font-family: 'SilkSerif-Light', serif;
 }
+
+.nav-text2 {
+    color: gray;
+    font-size: 30px;
+    text-align: center;
+}
+
+.nav-text2:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-family: bold;
+}
+
+.koszyk-podglad {
+    color: gray;
+    font-size: 42px;
+    text-align: center;
+    padding-top: 50px;
+    border-top: 7px solid rgba(0, 0, 0, 0.5);
+}
+
+.basket-sum {
+    font-size: 1.5rem;
+    color: gray;
+    font-size: 42px;
+    text-align: center;
+}
+
+
+.koszyk-pasek {
+    background-color: green;
+    color: white;
+    font-size: 36px;
+    letter-spacing: 1px;
+    font-family: 'SilkSerif-Light', serif;
+    padding: 40px 0px 40px 0px;
+    text-align: center;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.koszyk-pasek-daneL {
+    letter-spacing: 2px;
+    font-size: 64px;
+}
+
+.koszyk-pasek-daneR {
+    letter-spacing: 2px;
+    font-size: 64px;
+}

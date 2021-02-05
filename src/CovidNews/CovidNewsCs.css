@@ -6,9 +6,14 @@
 .casesName,
 .deathsName,
 .recoveryName,
-.tableSearch,
+.tableSearch{
+    font-family: Playfair Display, Georgia, Times New Roman, serif;
+}
+
 .searchName {
     font-family: Playfair Display, Georgia, Times New Roman, serif;
+    font-size: 40px;
+    padding-top: 20px;
 }
 
 .headerRaport {
@@ -91,17 +96,6 @@
     grid-row: 3;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .cases,
 .deaths,
 .recovery {
@@ -151,20 +145,11 @@
 }
 .tableCases {
     width: 90%;
+    font-size: 24px;
     
     font-family: Playfair Display, Georgia, Times New Roman, serif;
     margin-top: 20px;
 }
-
-
-
-
-
-
-
-
-
-
 
     .tableCases,
     .tableCases th,
@@ -173,17 +158,23 @@
         padding: 5px;
     }
 
-        .tableCases th {
+        .tableCases th  {
             color: white;
             background: #138EA1;
             text-align: center;
         }
+
+        .tableCases td {
+            text-align: center;
+            font-size: 24px;
+        }
+
 .countryName {
     text-align: center;
 }
         .otherTd,
         .otherTdTotal{
-            text-align: right;
+            text-align: center;
         }
 
 
@@ -210,25 +201,40 @@ input {
     position: sticky; 
     top: 0;
 }
+
 .searchName {
-    padding-right: 10px;
-    padding-left: 80px;
+    padding-right: 40px;
+    text-align: right;
+    font-size: 60px;
 }
+
+
 .inputSearch {
-    width: 125px;
-    box-sizing: border-box;
+    width: 500px;
+    /* box-sizing: border-box; */
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-position: 10px 10px;
+    /* background-position: 10px 10px; */
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    transition: width 0.4s ease-in-out;
+    padding: 20px 40px 18px 40px;
+    /* transition: width 0.4s ease-in-out; */
+    border-radius: 25px;
 }
 
-.inputSearch:focus {
+::placeholder {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+/* .inputSearch:focus {
     width: 70%;
+} */
+
+.button-search {
+    padding-top: 35px;
+    
 }
 
 
@@ -252,9 +258,12 @@ input {
     }
     
     .search,
-    .reportedCases,
-    .searchCase {
+    .reportedCases {
         padding-left: 20px;
+    }
+
+    .searchCase2 {
+        padding-left: 200px;
     }
 
     .table th {
@@ -263,6 +272,10 @@ input {
     
 }
 
+.searchCase {
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
 
 
 .update-time {

@@ -32,46 +32,48 @@ export default class Basket extends React.Component<BasketProp> {
         let callOwner = this.state.owner;
         console.log("testy test " + aniMarker + "ind " + 0 + "own: " + callOwner + "boolean " + this.props.prodToAdd);
         return (
-            <div className="basket-shop-display">
-                <h1>Podgląd koszyka:</h1>
-                <Table hover className="basket-table">
-                    {prInBasket.map((p: ProductInBasket, index) => {
-                        return (
-                            <tr
-                                // @ts-ignore.
-                                aniMarker={(aniMarker !== 0 && index === callOwner) ? aniMarker :
-                                    (p.name + p.qty === this.props.prodToAdd) ? 1 : 0}
-                                className="basket-table-row"
-                                onAnimationEnd={() => {
-                                    this.setState({aniMarker: 0})
-                                }}
-                            >
-                                <td>
-                                    <li className="basket-table-first-cell">{p.name}</li>
-                                </td>
-                                <td>{" x" + p.qty}</td>
-                                <div className="basket-table-buttons">
-                                    <td onClick={() => {
-                                        this.setState({aniMarker: 1, owner: index})
-                                        this.props.handleAdd(p.name, index)
+            <body>
+                <div className="basket-shop-display">
+                    <div className="koszyk-podglad"></div>
+                    <Table hover className="basket-table">
+                        {prInBasket.map((p: ProductInBasket, index) => {
+                            return (
+                                <tr
+                                    // @ts-ignore.
+                                    aniMarker={(aniMarker !== 0 && index === callOwner) ? aniMarker :
+                                        (p.name + p.qty === this.props.prodToAdd) ? 1 : 0}
+                                    className="basket-table-row"
+                                    onAnimationEnd={() => {
+                                        this.setState({aniMarker: 0})
                                     }}
-                                    ><AiOutlinePlus/></td>
-                                    <td><AiOutlineMinus onClick={() => {
-                                        this.setState({aniMarker: -1, owner: index})
-                                        this.props.handleMinus(p.name, index)
-                                    }}/></td>
-                                    <td><RiDeleteBin5Line onClick={() => {
-                                        this.props.handleDelete(p.name)
-                                    }}/></td>
-                                </div>
-                            </tr>
-                        );
-                    })}
-                </Table>
-                <div className="basket-total">
-                    <h1>Suma: {ShopUtils.getTotalPrice()} zł</h1>
+                                >
+                                    <td>
+                                        <li className="basket-table-first-cell">{p.name}</li>
+                                    </td>
+                                    <td>{" x" + p.qty}</td>
+                                    <div className="basket-table-buttons">
+                                        <td onClick={() => {
+                                            this.setState({aniMarker: 1, owner: index})
+                                            this.props.handleAdd(p.name, index)
+                                        }}
+                                        ><AiOutlinePlus/></td>
+                                        <td><AiOutlineMinus onClick={() => {
+                                            this.setState({aniMarker: -1, owner: index})
+                                            this.props.handleMinus(p.name, index)
+                                        }}/></td>
+                                        <td><RiDeleteBin5Line onClick={() => {
+                                            this.props.handleDelete(p.name)
+                                        }}/></td>
+                                    </div>
+                                </tr>
+                            );
+                        })}
+                    </Table>
+                    {/* <div className="basket-sum">
+                        <p>SUMA: {ShopUtils.getTotalPrice()} zł</p>
+                    </div> */}
                 </div>
-            </div>
+            </body>
         );
     }
 }
