@@ -10,6 +10,7 @@ import Login from "./components/Login/Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Panel from "./components/LoginPanel/Panel";
 import Register from "./components/Register/Register";
+import FormEditUserData from "./FormEditUserData"
 
 // const enqueueSnackbar = () => useSnackbar();
 export default class App extends React.Component {
@@ -51,6 +52,7 @@ export default class App extends React.Component {
                         <Route path="/news" component={CovidNews}></Route>
                         <Route path="/shop" component={CovidShop}></Route>
                         <Route path="/medicalcheck" component={FormMedicalCheck}></Route>
+                        <Route path="/editdata" component={FormEditUserData}></Route>
                         <Route path="/panel" render={() => <Panel user={this.state.user!}/>}/>
                         <Route path="/login" render={() => <Login setUser={(u) => {
                             this.setState({user: u})
