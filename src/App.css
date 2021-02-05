@@ -158,6 +158,7 @@
     ;
 }
 
+
 .headerMedical,
 .header2,
 .headerDetails {
@@ -170,7 +171,12 @@
 
 .mainForm {
     margin: 1rem;
+
     
+}
+
+.mainForm label{
+    margin-left:20px;
 }
 
 
@@ -184,18 +190,23 @@
 .dateFromInput,
 .dateToInput,
 .zipInput,
-.methodSend{
+.methodSend,
+.passwordInput{
     opacity: 60%;
     width: 345px;
     padding: 7px 10px 12px 10px;
     border-radius: 8px ;
     border: 0px solid ;
+
 }
+
+
 .dateInput,
 .emailInput,
 .phoneInput,
 .addressInput,
-.cityInput {
+.cityInput,
+.passwordInput{
     grid-column: 2 / span 2;
 }
 .headerDetails,
@@ -212,6 +223,9 @@
 
 .formMedical label {
     padding-left: 5px;
+}
+.zipInput{
+    paddint-bottom: 10px;
 }
 
 .formButtonSubmit {
@@ -304,7 +318,9 @@ abbr {
     .emailInput,
     .phoneInput,
     .addressInput,
-    .cityInput {
+    .cityInput,
+    .zipInput,
+    .passwordInput{
         grid-column: 1/span 1;
         margin: 10px;
     }
