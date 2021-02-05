@@ -30,6 +30,7 @@ export default class Basket extends React.Component<BasketProp> {
         let prInBasket = this.props.prInBasket;
         let aniMarker = this.state.aniMarker;
         let callOwner = this.state.owner;
+        console.log("testy test " + aniMarker + "ind " + 0 + "own: " + callOwner + "boolean " + this.props.prodToAdd);
         return (
             <div className="basket-shop-display">
                 <h1>Podgląd koszyka:</h1>

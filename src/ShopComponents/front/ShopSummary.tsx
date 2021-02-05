@@ -67,7 +67,6 @@ class ShopSummary extends React.Component {
         fetchDataFromServer("http://localhost:8080/orders", () => {
             this.setState({orderSent: true, productInBasket: []});
             localStorage.removeItem("productsInBasket");
-            alert("zamowienie przyjete!");
         }, requestOptions);
         console.log(JSON.stringify(wrapper));
     }
@@ -79,7 +78,7 @@ class ShopSummary extends React.Component {
         if (this.state.orderSent) {
             return (
                 <Popup
-                    text='Close Me'
+                    text='Zamówienie przyjęte!'
                     closePopup={this.togglePopup.bind(this)}
                 />
             );
