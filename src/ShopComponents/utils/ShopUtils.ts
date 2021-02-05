@@ -41,12 +41,7 @@ export const getTotalPrice = () => {
         .reduce((pn, cn) => pn + cn);
 };
 
-export const fetchDataFromServer = (url: string, callback: (p: string) => void, requestOption: object) => {
-    // const auth = window.btoa("admin@test.com" + ':' + "test");
-    const request = {
-        cache: "no-cache"
-        //headers: {'Authorization': 'Basic ' + auth}
-    };
+export const fetchDataFromServer = (url: string, callback: (p: any) => void, requestOption: object) => {
 
     fetch(url, requestOption)
         .then(res => res.json())

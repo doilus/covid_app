@@ -24,10 +24,6 @@ export default class ProductPanel extends React.Component<ProductPanelProps, {}>
 
     componentDidMount() {
 
-        // const auth = window.btoa("admin@test.com" + ':' + "test");
-        //  const request = {
-        //     //headers: {'Authorization': 'Basic ' + auth}
-        //  };
         let productURI = "http://localhost:8080/product/all";
         fetchDataFromServer(productURI, (p: any) => {
             this.setState({products: p})
