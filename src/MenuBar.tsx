@@ -41,8 +41,9 @@ export default class MenuBar extends React.Component<MenuBarProps> {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link href="medicalcheck"> Zapis na badania</Nav.Link>
-                            <Nav.Link href="editdata"> Edytuj dane</Nav.Link>
+                            {this.props.user && <Nav.Link href="medicalcheck"> Zapis na badania</Nav.Link>}
+
+                            {this.props.user && <Nav.Link href="editdata"> Edytuj dane</Nav.Link>}
                             {this.props.user && <><Link to="/panel"
                                                         className="nav-link"> {this.props.user.credentials.role} panel</Link>
                                 <Nav.Link onClick={this.onLogout}>Logout</Nav.Link></>}
