@@ -159,7 +159,12 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
         let shouldRedirect = this.state.redirect;
         if (shouldRedirect) return (<Redirect to={"/"}/>);
         if (this.state.logginErr) return (<Popup text='Wylogowałes się!' closePopup={this.togglePopup.bind(this)}/>)
-        return (<body> <div>
+        return (
+        <body> 
+            <div>
+            
+            
+            
             <main className="mainForm">
                 <form onSubmit={this.onSubmit} className="formMedical">
                     <h1 className="headerMedical"> Zapisz się na badania</h1>
@@ -205,7 +210,9 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
                     </div>
                 </form>
             </main>
-        </div>  
+
+
+
        
           <div className="footer">
               <div className="footerTop">
