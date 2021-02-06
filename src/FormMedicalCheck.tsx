@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent} from 'react';
+import React, {FormEvent} from 'react';
 import './App.css';
 import {IUser} from "./components/Login/IUser";
 import Popup from "./ShopComponents/front/Popup";
@@ -21,7 +21,14 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
     state = {
         userExt: undefined,
         redirect: false,
-        logginErr: false
+        logginErr: false,
+        city: "",
+        date: "",
+        freeSlots: [],
+        pickedSlot: "",
+        email: "",
+        submitOk: false,
+        submitFailed: false
     }
 
     constructor(props: PanelProps) {
@@ -31,20 +38,69 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
     }
 
     componentDidUpdate(prevProps: Readonly<PanelProps>, prevState: Readonly<{}>, snapshot?: any) {
-        console.log("componentDidUpdate");
         if (prevProps.user !== this.props.user && !localStorage.getItem("user")) this.setState({logginErr: true})
     }
 
-    onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    findSlot = () => {
+        const logInfo = localStorage.getItem("logInfo") as string;
+        let header = {headers: {'Authorization': logInfo}};
+        if (this.state.city && this.state.date) {
+            fetch("http://localhost:8080/medCheck/free/" + this.state.city + "/" + this.state.date + "", header)
+                .then(resp => {
+                    if (resp.status === 200) {
+                        console.log("SUCCESSS")
+                        return resp.json();
+                    } else if (resp.status === 401) {
+                        console.log("Unauthorized!!");
+                    }
+                })
+                .then((data) => {
+                    this.setState({freeSlots: data});
+                    console.log(this.state.freeSlots);
+                })
+                .catch((e) => {
+                    console.log("error zlapany!!!");
+                });
+        }
+    }
+    onChange = (e: any) => {
         this.setState({[e.target.name]: e.target.value});
+        if (!e.target.name) this.setState({pickedSlot: e.target.value});
     }
 
     onSubmit = (e: FormEvent<any>) => {
         e.preventDefault();
-        console.log(JSON.stringify(this.state));
         let wrapper = {
-            medicalCheck: null,
+            slot: this.state.pickedSlot,
+            email: this.state.email,
+            city: this.state.city
         }
+        const pathVariables = "slot=" + this.state.pickedSlot + "email=" + this.state.email + "city=" + this.state.city + "date=" + this.state.date;
+        const logInfo = localStorage.getItem("logInfo") as string;
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Authorization': logInfo},
+        };
+        fetch("http://localhost:8080/medCheck" + this.state.city + "/" + this.state.date + "?" + pathVariables
+            , requestOptions)
+            .then(resp => {
+                if (resp.status === 200) {
+                    console.log("SUCCESSS")
+                    return resp.json();
+                } else {
+                    this.setState({submitFailed: true});
+                    ;
+                }
+            })
+            .then((data) => {
+                this.setState({freeSlots: data});
+                console.log(this.state.freeSlots);
+            })
+            .catch((e) => {
+                console.log("error zlapany!!!");
+                this.setState({submitFailed: true});
+            });
+
     }
 
     togglePopup() {
@@ -61,7 +117,8 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
             user = JSON.parse(json);
             console.log(user);
             // @ts-ignore
-            let email: string = user?.credentials.login as string;
+            let email: string = user.credentials.login as string;
+            this.setState({email: email});
             let header = {headers: {'Authorization': logInfo}};
             fetch("http://localhost:8080/user/getInfo/" + email, header)
                 .then(resp => {
@@ -89,6 +146,7 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
         let email: string = "";
         let phone: string = "";
         let fieldRO = true;
+        let fieldRO2 = this.state.freeSlots.length === 0
         if (this.state.userExt !== undefined) {
             //@ts-ignore
             const extUser: UserExtd = this.state.userExt;
@@ -126,13 +184,23 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
                     <input onChange={this.onChange} className="cityInput" type="text" name="city" id="city"
                            placeholder="podaj miasto" required/>
                     <label htmlFor="dateCheck">Data: <abbr title="required" aria-label="required">*</abbr></label>
-                    <input onChange={this.onChange} className="dateFromInput" type="date" name="dateFrom" id="dateFrom"
+                    <input onChange={this.onChange} className="dateFromInput" type="date" name="date" id="date"
                            required/>
-                    <input onChange={this.onChange} className="dateToInput" type="date" name="dateTo" id="dateTo"
-                           required/>
-
+                    <button onClick={this.findSlot} className="formButtonSubmit">Znajdź wolny slot</button>
+                    <div>
+                        <label htmlFor="shpMethod">Wybierz wolny slot: <abbr title="required"
+                                                                             aria-label="required">*</abbr></label>
+                        <select onChange={this.onChange} className="slotPick" id="browsers">u
+                            {this.state.freeSlots.map(p => {
+                                console.log("fieldRO: " + fieldRO2);
+                                return (
+                                    <option>{p[0]}:00</option>
+                                )
+                            })}
+                        </select>
+                    </div>
                     <div className="formButtons">
-                        <input readOnly={fieldRO} type="submit" className="formButtonSubmit" value="Zapisz się"/>
+                        <input readOnly={fieldRO2} type="submit" className="formButtonSubmit" value="Zapisz się"/>
                         <a href="" className="formButtonCancel"> Anuluj</a>
                     </div>
                 </form>
