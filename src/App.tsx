@@ -10,7 +10,7 @@ import Login from "./components/Login/Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Panel from "./components/LoginPanel/Panel";
 import Register from "./components/Register/Register";
-import FormEditUserData from "./FormEditUserData"
+import FormEditUserData from "./FormEditUserData";
 
 // const enqueueSnackbar = () => useSnackbar();
 export default class App extends React.Component {
