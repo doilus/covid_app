@@ -1,30 +1,31 @@
 import React from 'react';
 import {GiGasMask, GiMedicinePills, GiSpiralBottle, ImBooks} from "react-icons/all";
 
+
 export const shopItems =
     [
         {
-            Name: "Maseczki",
+            Name: "MASECZKI",
             ikon: <GiGasMask/>,
-            cName: "nav-text",
+            cName: "nav-text2",
             cat: "mask"
         },
         {
-            Name: "Artykuły do dezynfekcji",
+            Name: "ARTYKUŁY DO DEZYNFEKCJI",
             ikon: <GiSpiralBottle/>,
-            cName: "nav-text",
+            cName: "nav-text2",
             cat: "hygiene_products"
         },
         {
-            Name: "Suplementy",
+            Name: "SUPLEMENTY",
             ikon: <GiMedicinePills/>,
-            cName: "nav-text",
+            cName: "nav-text2",
             cat: "suplements"
         },
         {
-            Name: "Książki",
+            Name: "KSIAŻKI",
             ikon: <ImBooks/>,
-            cName: "nav-text",
+            cName: "nav-text2",
             cat: "books"
         }
     ];

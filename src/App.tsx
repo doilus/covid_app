@@ -10,7 +10,7 @@ import Login from "./components/Login/Login";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Panel from "./components/LoginPanel/Panel";
 import Register from "./components/Register/Register";
-import FormEditUserData from "./FormEditUserData"
+import FormEditUserData from "./FormEditUserData";
 
 // const enqueueSnackbar = () => useSnackbar();
 export default class App extends React.Component {
@@ -26,15 +26,89 @@ export default class App extends React.Component {
         // enqueueSnackbar.closeSnackbar('You have been logged out!');
     }
     Home = () => (
-        <div className="cardWykon">
-            <h1 className="wykon">Wykonali:</h1>
-            <div className="wykonNames">
-                <li> Damian Goraj s18085</li>
-                <li> Dominika Ługowska s17226</li>
-                <li> Michelle Herok s15474</li>
-                <li> Marcin Chojnacki s15074</li>
+        <body>
+    <div id="container">
+            {/* <div id="header">
+                CORONAVIRUS PORTAL
+            </div> */}
+
+        <div className="text-welcome">
+            NAJWAZNIEJSZE INFORMACJE ZE SWIATA DOTYCZACE PANDEMII
+        </div>
+
+        <div id="contentindex">
+            <div id="contentindexL">
+            </div>
+
+            <div id="contentindexR">
+                <p className="pStyle2">The reasons swine flu could return</p>
+                <p className="pStyle"> 
+                    The last global flu pandemic was declared over in 2010, but the virus responsible is still with us today – and scientists fear human activity is increasing the risk of new influenza A outbreaks.
+                </p>
             </div>
         </div>
+
+        <div id="contentindex2">
+            <div id="contentindexL2">
+            <p className="pStyle2">Researchers are working to prevent a dangerous coronavirus</p>
+                <p className="pStyle"> 
+                    Seventy-five percent of the newly emerging diseases currently affecting people originate in animals, according to Predict, a US government-funded collaboration by infectious disease experts across the globe. Already, Predict scientists have identified 1,200 new zoonotic, or animal-borne, diseases. But scientists estimate there are some 700,000 more zoonotic diseases we don’t even know about yet.
+                </p>
+            </div>
+
+            <div id="contentindexR2">
+            </div>
+        </div>
+
+        <div id="contentindex3">
+            <div id="contentindexL3">
+            </div>
+
+            <div id="contentindexR3">
+                <p className="pStyle2">The death rate for Nipah virus is up to 75% and it has no vaccine.</p>
+                <p className="pStyle"> 
+                    It was 3 January 2020, and Supaporn Wacharapluesadee was standing by, awaiting a delivery. Word had spread that there was some kind of respiratory disease affecting people in Wuhan, China, and with the Lunar New Year approaching, many Chinese tourists were headed to neighbouring Thailand to celebrate.
+                </p>
+            </div>
+        </div>
+
+        <div id="contentindex4">
+            <div id="contentindexL4">
+            <p className="pStyle2">Stopping the next one: What could the next pandemic be?</p>
+                <p className="pStyle"> 
+                    The Covid-19 pandemic took much of the world by surprise. But not everyone. For years, epidemiologists and other experts have warned that we have been setting ourselves up for a global pandemic.
+                </p>
+            </div>
+
+            <div id="contentindexR4">
+            </div>
+        </div>
+
+        <div className="footer">
+            <div className="footerTop">
+                CONTENT MANAGEMENT SYSTEM - PJATK
+            </div>
+
+            <div className="footerBottom">
+                <div className="footerBottomLeft">
+                    <a href="link1.html" className="footerOption"> LINK1 </a><div className="pStyle3"></div>
+                    <a href="link2.html" className="footerOption"> LINK2 </a><div className="pStyle3"></div>
+                    <a href="link3.html" className="footerOption"> LINK3 </a><div className="pStyle3"></div>
+                    <a href="link4.html" className="footerOption"> LINK4 </a><div className="pStyle3"></div>
+                </div>
+                <div className="footerBottomRight">
+                    DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
+                    MICHELLE HEROK <div className="pStyle3"></div>
+                    DAMIAN GORAJ <div className="pStyle3"></div>
+                    MARCIN CHOJNACKI
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
     );
     render() {
         if (!this.state.user) {

@@ -159,7 +159,7 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
         let shouldRedirect = this.state.redirect;
         if (shouldRedirect) return (<Redirect to={"/"}/>);
         if (this.state.logginErr) return (<Popup text='Wylogowałes się!' closePopup={this.togglePopup.bind(this)}/>)
-        return (<div>
+        return (<body> <div>
             <main className="mainForm">
                 <form onSubmit={this.onSubmit} className="formMedical">
                     <h1 className="headerMedical"> Zapisz się na badania</h1>
@@ -205,7 +205,30 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
                     </div>
                 </form>
             </main>
-        </div>);
+        </div>  
+       
+          <div className="footer">
+              <div className="footerTop">
+                  CONTENT MANAGEMENT SYSTEM - PJATK
+              </div>
+
+              <div className="footerBottom">
+                  <div className="footerBottomLeft">
+                      <a href="link1.html" className="footerOption"> LINK1 </a><div className="pStyle3"></div>
+                      <a href="link2.html" className="footerOption"> LINK2 </a><div className="pStyle3"></div>
+                      <a href="link3.html" className="footerOption"> LINK3 </a><div className="pStyle3"></div>
+                      <a href="link4.html" className="footerOption"> LINK4 </a><div className="pStyle3"></div>
+                  </div>
+                  <div className="footerBottomRight">
+                      DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
+                      MICHELLE HEROK <div className="pStyle3"></div>
+                      DAMIAN GORAJ <div className="pStyle3"></div>
+                      MARCIN CHOJNACKI
+                  </div>
+              </div>
+          </div>
+        </div>
+      </body>);
     }
 }
 

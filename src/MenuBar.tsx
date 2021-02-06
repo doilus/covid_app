@@ -5,6 +5,7 @@ import cov_logo from "./cov_logo.svg";
 import {RiShoppingBasketLine} from "react-icons/all";
 import {IUser} from "./components/Login/IUser";
 import {Link} from "react-router-dom";
+import './style.css';
 
 type MenuBarProps = {
     user: IUser | undefined,
@@ -22,10 +23,9 @@ export default class MenuBar extends React.Component<MenuBarProps> {
     }
 
     render() {
-
-
         // @ts-ignore
         return (
+          <body>
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
                     <Navbar.Brand>
@@ -46,17 +46,26 @@ export default class MenuBar extends React.Component<MenuBarProps> {
                             {this.props.user && <Nav.Link href="editdata"> Edytuj dane</Nav.Link>}
                             {this.props.user && <><Link to="/panel"
                                                         className="nav-link"> {this.props.user.credentials.role} panel</Link>
+
                                 <Nav.Link onClick={this.onLogout}>Logout</Nav.Link></>}
-                            {!this.props.user && <><Link to="/login" className="nav-link">Login</Link><Link
-                                to="/register"
-                                className="nav-link">Register</Link></>}
-                        </Nav>
-                        <Nav>
-                            <Nav.Link href="mybasket"><RiShoppingBasketLine/></Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
+                            
+							{!this.props.user && <><Link to="/login" className="nav-link"><div className="option-header-inner">ZALOGUJ SIĘ</div></Link>
+							<Link to="/register" className="nav-link"><div className="option-header-inner">ZAREJESTRUJ SIĘ</div></Link></>}
+							
+                            <div className="option-header">
+                                    <Nav.Link href="editdata"><div className="option-header-inner">EDYTUJ DANE</div></Nav.Link>
+                            </div>
+
+                        {/* </Nav> */}
+                        {/* <Nav> */}
+                            <div className="option-header">
+                                <Nav.Link href="mybasket"><div className="option-header-inner"></div><RiShoppingBasketLine/></Nav.Link>
+                            </div>
+                        {/* </Nav> */}
+                    </div>
+                </div>
             </div>
+        </body>
         );
     }
 }

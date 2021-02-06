@@ -4,6 +4,7 @@ import ProductPanel from "./ProductPanel";
 import "../css/CovidShop.scss"
 import ProductInBasketCollection from "../interfaces/ProductInBasketCollection";
 import ProductInBasket from "../interfaces/ProductInBasket";
+import * as ShopUtils from "../utils/ShopUtils";
 
 class CovidShop extends React.Component {
     state = {productFilter: "", lastItemAdded: ""}
@@ -42,12 +43,24 @@ class CovidShop extends React.Component {
     render() {
         const currentProductFilter = this.state.productFilter;
         const prodToAdd = this.state.lastItemAdded;
-        return (<div className="CovidShop">
-            <FilterPanel filterProduct={this.filterProduct} prodToAdd={prodToAdd}/>
-            <div className="shopAll">
-            <ProductPanel filteredProduct={currentProductFilter} addToBasket={this.addToBasket}/>
-            </div>
-            </div>);
+        return (
+            <body>
+                 <div className="text-welcome">
+                    DOKONAJ NIEZBĘDNYCH ZAKUPÓW W NASZYM SKLEPIE
+                  </div>
+          
+                  <div className="koszyk-pasek">
+                        <div className="koszyk-pasek-daneL">KOSZYK</div>
+                        <div className="koszyk-pasek-daneR">SUMA: {ShopUtils.getTotalPrice()} zł</div>
+                 </div>
+
+                <div className="CovidShop">
+                    <FilterPanel filterProduct={this.filterProduct} prodToAdd={prodToAdd}/>
+                    <div className="shopAll">
+                        <ProductPanel filteredProduct={currentProductFilter} addToBasket={this.addToBasket}/>
+                    </div>
+                </div>
+            </body>);
     }
 }
 
